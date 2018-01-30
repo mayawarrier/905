@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 5f8c06c2b1583d142b605ef11a542e79
+timeCreated: 1516247806
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: 905namePlate
+    100002: arm
+    100004: blueWire
+    100006: blueWires
+    100008: //RootNode
+    100010: calfFoot
+    100012: hand
+    100014: head
+    100016: hingeJoint
+    100018: hip
+    100020: metalCentre
+    100022: redWire
+    100024: redWires
+    100026: thigh
+    100028: thighPiston
+    100030: torso
+    100032: yellowWire
+    100034: yellowWires
+    400000: 905namePlate
+    400002: arm
+    400004: blueWire
+    400006: blueWires
+    400008: //RootNode
+    400010: calfFoot
+    400012: hand
+    400014: head
+    400016: hingeJoint
+    400018: hip
+    400020: metalCentre
+    400022: redWire
+    400024: redWires
+    400026: thigh
+    400028: thighPiston
+    400030: torso
+    400032: yellowWire
+    400034: yellowWires
+    2300000: 905namePlate
+    2300002: arm
+    2300004: blueWire
+    2300006: blueWires
+    2300008: calfFoot
+    2300010: hand
+    2300012: head
+    2300014: hingeJoint
+    2300016: hip
+    2300018: metalCentre
+    2300020: redWire
+    2300022: redWires
+    2300024: thigh
+    2300026: thighPiston
+    2300028: torso
+    2300030: yellowWire
+    2300032: yellowWires
+    3300000: 905namePlate
+    3300002: arm
+    3300004: blueWire
+    3300006: blueWires
+    3300008: calfFoot
+    3300010: hand
+    3300012: head
+    3300014: hingeJoint
+    3300016: hip
+    3300018: metalCentre
+    3300020: redWire
+    3300022: redWires
+    3300024: thigh
+    3300026: thighPiston
+    3300028: torso
+    3300030: yellowWire
+    3300032: yellowWires
+    4300000: hand
+    4300002: head
+    4300004: calfFoot
+    4300006: thighPiston
+    4300008: thigh
+    4300010: hingeJoint
+    4300012: hip
+    4300014: metalCentre
+    4300016: torso
+    4300018: 905namePlate
+    4300020: arm
+    4300022: yellowWires
+    4300024: blueWires
+    4300026: redWires
+    4300028: yellowWire
+    4300030: redWire
+    4300032: blueWire
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

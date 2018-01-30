@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 0d2504641aa08ff4498fb1c1b84a189e
+timeCreated: 1516247778
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: arm
+    100002: arm_001
+    100004: blueWires
+    100006: calfFoot
+    100008: calfFoot_001
+    100010: Cube
+    100012: hand
+    100014: hand2
+    100016: head
+    100018: hingeJoint
+    100020: hingeJoint_001
+    100022: hingeJoint_002
+    100024: hingeJoint_003
+    100026: hingeJoint_004
+    100028: hingeJoint_005
+    100030: hip
+    100032: metalCentre
+    100034: //RootNode
+    100036: Plane
+    100038: Plane_001
+    100040: redWires
+    100042: redWires_001
+    100044: thigh
+    100046: thigh_001
+    100048: thighPiston
+    100050: thighPiston_001
+    100052: thighPiston_002
+    100054: thighPiston_003
+    100056: torso
+    100058: yellowWires
+    400000: arm
+    400002: arm_001
+    400004: blueWires
+    400006: calfFoot
+    400008: calfFoot_001
+    400010: Cube
+    400012: hand
+    400014: hand2
+    400016: head
+    400018: hingeJoint
+    400020: hingeJoint_001
+    400022: hingeJoint_002
+    400024: hingeJoint_003
+    400026: hingeJoint_004
+    400028: hingeJoint_005
+    400030: hip
+    400032: metalCentre
+    400034: //RootNode
+    400036: Plane
+    400038: Plane_001
+    400040: redWires
+    400042: redWires_001
+    400044: thigh
+    400046: thigh_001
+    400048: thighPiston
+    400050: thighPiston_001
+    400052: thighPiston_002
+    400054: thighPiston_003
+    400056: torso
+    400058: yellowWires
+    2300000: arm
+    2300002: arm_001
+    2300004: blueWires
+    2300006: calfFoot
+    2300008: calfFoot_001
+    2300010: Cube
+    2300012: hand
+    2300014: hand2
+    2300016: head
+    2300018: hingeJoint
+    2300020: hingeJoint_001
+    2300022: hingeJoint_002
+    2300024: hingeJoint_003
+    2300026: hingeJoint_004
+    2300028: hingeJoint_005
+    2300030: hip
+    2300032: metalCentre
+    2300034: Plane
+    2300036: Plane_001
+    2300038: redWires
+    2300040: redWires_001
+    2300042: thigh
+    2300044: thigh_001
+    2300046: thighPiston
+    2300048: thighPiston_001
+    2300050: thighPiston_002
+    2300052: thighPiston_003
+    2300054: torso
+    2300056: yellowWires
+    3300000: arm
+    3300002: arm_001
+    3300004: blueWires
+    3300006: calfFoot
+    3300008: calfFoot_001
+    3300010: Cube
+    3300012: hand
+    3300014: hand2
+    3300016: head
+    3300018: hingeJoint
+    3300020: hingeJoint_001
+    3300022: hingeJoint_002
+    3300024: hingeJoint_003
+    3300026: hingeJoint_004
+    3300028: hingeJoint_005
+    3300030: hip
+    3300032: metalCentre
+    3300034: Plane
+    3300036: Plane_001
+    3300038: redWires
+    3300040: redWires_001
+    3300042: thigh
+    3300044: thigh_001
+    3300046: thighPiston
+    3300048: thighPiston_001
+    3300050: thighPiston_002
+    3300052: thighPiston_003
+    3300054: torso
+    3300056: yellowWires
+    4300000: Plane_001
+    4300002: Plane
+    4300004: Cube
+    4300006: arm_001
+    4300008: arm
+    4300010: blueWires
+    4300012: calfFoot_001
+    4300014: calfFoot
+    4300016: hand
+    4300018: hand2
+    4300020: head
+    4300022: redWires
+    4300024: thigh
+    4300026: thighPiston_001
+    4300028: thighPiston_002
+    4300030: thighPiston_003
+    4300032: thighPiston
+    4300034: torso
+    4300036: redWires_001
+    4300038: yellowWires
+    4300040: thigh_001
+    4300042: metalCentre
+    4300044: hingeJoint
+    4300046: hip
+    4300048: hingeJoint_001
+    4300050: hingeJoint_002
+    4300052: hingeJoint_003
+    4300054: hingeJoint_004
+    4300056: hingeJoint_005
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
