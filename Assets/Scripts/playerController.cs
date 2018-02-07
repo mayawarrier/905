@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour {
 
-    public cameraController cameraController;
+	public cameraController cameraController;
+	public Offset offsetController;
     private bool w, a, s, d, spacePressed, ctrlPressed;
     private bool[] rotationFlags;
     public robotMovement player;
@@ -21,8 +22,9 @@ public class playerController : MonoBehaviour {
     private void Start()
     {
         rotationFlags = new bool[8];
-        walkingCameraPosition = new Vector3(3.29f, 3.96f, -6.78f);
-        runningCameraPosition = new Vector3(0, 5, -10);
+        //walkingCameraPosition = new Vector3(3.29f, 3.96f, -6.78f);
+		walkingCameraPosition = new Vector3(3.30f, 1.50f, -6.80f);
+        runningCameraPosition = new Vector3(-3.0f, 2.54f, -10f);
     }
 
     void Update () {
@@ -57,7 +59,8 @@ public class playerController : MonoBehaviour {
         else if ((w || a || s || d) && spacePressed && !ctrlPressed) {
             isRunning = true;
             player.forwardSpeed = 8;
-            cameraController.GlideToPosition(runningCameraPosition);
+            //cameraController.GlideToPosition(runningCameraPosition);
+			offsetController.RunDirectionSet();
 		}
 
         for (int i = 0; i < rotationFlags.Length; i++)
@@ -70,8 +73,8 @@ public class playerController : MonoBehaviour {
         }
 
         if (!spacePressed) {
-            cameraController.GlideToPosition(walkingCameraPosition);
-        }
+			offsetController.WalkDirectionSet();
+      }
 	}
 
     private Vector3 rotateDirectionVector(Vector3 fwdWrtPlayer, int rotation) {
