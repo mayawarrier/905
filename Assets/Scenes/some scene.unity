@@ -476,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946b47eed8b1c3f4fa93ccf68c6d8d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 1763086052}
   offsetController: {fileID: 555102812}
   player: {fileID: 381562400}
   cameraTransform: {fileID: 555102811}
@@ -629,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 1
   maxDistance: 10
-  smooth: 10
+  smoothInitialValue: 0
   player: {fileID: 962938013}
 --- !u!1 &711843548
 GameObject:
@@ -769,8 +768,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.000003, y: 2.021263, z: 0.050677862}
-  m_Center: {x: 1.044465e-16, y: -4.484119e-17, z: 0.003876168}
+  m_Size: {x: 2.000003, y: 2.021263, z: 0.05145566}
+  m_Center: {x: 1.2757815e-17, y: 5.0849894e-18, z: 0.000388899}
 --- !u!1 &1096257712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,8 +1934,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0000002, y: 2.0000002, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 2.0000002, z: 0.5}
+  m_Center: {x: 0, y: -0, z: 0}
 --- !u!1 &2081326327
 GameObject:
   m_ObjectHideFlags: 0
