@@ -15,7 +15,6 @@ public class cameraController: MonoBehaviour {
     public Toggle mouseAxis;
     private int axisDirection;
     private bool cameraPaused;
-    public bool glideComplete;
     private Vector3 previousFinalPosition;
 	public Transform follow; // gameObject to follow
 
@@ -25,7 +24,6 @@ public class cameraController: MonoBehaviour {
         mouseSensitivity.value = 10;
         mouseAxis.isOn = true;
         glideSpeed = 5;
-        glideComplete = false;
         transform.GetChild(0).localPosition = new Vector3(3.29f, 3.96f, -6.78f);
     }
 
@@ -66,20 +64,17 @@ public class cameraController: MonoBehaviour {
 	}
 
     public void GlideToPosition(Vector3 finalPosition) {
-        //glideComplete = false;
         initialPosition = transform.GetChild(0).localPosition;
 
         if (initialPosition != finalPosition)
         {
             transform.GetChild(0).localPosition = Vector3.Slerp(initialPosition, finalPosition, glideSpeed * Time.deltaTime);
         }
-       // if (transform.GetChild(0).localPosition != finalPosition)
-        //{
-          //  glideComplete = false;
-       // }
-        //else {
-          //  glideComplete = true;
-       // }
     }
 
+    private Vector3 AccurateSlerp(Vector3 initialPosition, Vector3 finalPosition, float increment) {
+
+
+        return Vector3.zero;
+    }
 }
