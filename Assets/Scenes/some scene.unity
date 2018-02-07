@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946b47eed8b1c3f4fa93ccf68c6d8d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraController: {fileID: 1763086052}
+  offsetController: {fileID: 555102812}
   player: {fileID: 381562400}
   cameraTransform: {fileID: 555102811}
   lookAt: {fileID: 1770957540}
@@ -537,6 +537,7 @@ GameObject:
   - component: {fileID: 555102809}
   - component: {fileID: 555102808}
   - component: {fileID: 555102807}
+  - component: {fileID: 555102812}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -583,7 +584,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 62.5
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -608,12 +609,27 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 555102806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.29, y: 3.96, z: -6.78}
+  m_LocalPosition: {x: 3.3, y: 1.5, z: -6.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1763086051}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &555102812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 555102806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87e5422bbed01f41aec0c00a7999906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistance: 1
+  maxDistance: 10
+  smoothInitialValue: 0
+  player: {fileID: 962938013}
 --- !u!1 &711843548
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,8 +768,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.000002, y: 2.0000007, z: 3.5527137e-14}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.000003, y: 2.021263, z: 0.05145566}
+  m_Center: {x: 1.2757815e-17, y: 5.0849894e-18, z: 0.000388899}
 --- !u!1 &1096257712
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +1013,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400086, guid: 8729e7d95c2e8944cb84f999c098de5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.83
       objectReference: {fileID: 0}
     - target: {fileID: 400086, guid: 8729e7d95c2e8944cb84f999c098de5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1030,6 +1046,14 @@ Prefab:
     - target: {fileID: 100086, guid: 8729e7d95c2e8944cb84f999c098de5e, type: 3}
       propertyPath: m_Name
       value: 905
+      objectReference: {fileID: 0}
+    - target: {fileID: 100086, guid: 8729e7d95c2e8944cb84f999c098de5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 8729e7d95c2e8944cb84f999c098de5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8729e7d95c2e8944cb84f999c098de5e, type: 3}
@@ -1123,21 +1147,6 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 101256, guid: 4fb4a1df45ff5574b9da4904fdf92a6a, type: 3}
   m_PrefabInternal: {fileID: 182762183}
---- !u!54 &1572602281
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1572602277}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1572602282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1489,7 +1498,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: {fileID: 1538465912}
   mouseAxis: {fileID: 2039581454}
-  follow: {fileID: 962938015}
+  glideComplete: 0
+  follow: {fileID: 381562402}
 --- !u!1 &1770957539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,8 +1605,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.000003, y: 2.0212631, z: 1.5574284}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.000003, y: 2.0212631, z: 1.6523691}
+  m_Center: {x: 4.8256245e-17, y: -1.7396454e-17, z: 0.04747042}
 --- !u!1 &1980775318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,8 +1934,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0000002, y: 2.0000002, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2, y: 2.0000002, z: 0.5}
+  m_Center: {x: 0, y: -0, z: 0}
 --- !u!1 &2081326327
 GameObject:
   m_ObjectHideFlags: 0

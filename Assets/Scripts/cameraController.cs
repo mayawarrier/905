@@ -23,8 +23,7 @@ public class cameraController: MonoBehaviour {
         cameraPaused = false;
         mouseSensitivity.value = 10;
         mouseAxis.isOn = true;
-        glideSpeed = 5;
-        transform.GetChild(0).localPosition = new Vector3(3.29f, 3.96f, -6.78f);
+        glideSpeed = 3;
     }
 
     public void Pause()
@@ -37,7 +36,6 @@ public class cameraController: MonoBehaviour {
     }
 
     void Update () {
-        //Debug.Log("glideComplete: " + glideComplete.ToString());
         if (!cameraPaused) {
             if (mouseAxis.isOn)
             {
@@ -68,7 +66,7 @@ public class cameraController: MonoBehaviour {
 
         if (initialPosition != finalPosition)
         {
-            transform.GetChild(0).localPosition = Vector3.Slerp(initialPosition, finalPosition, glideSpeed * Time.deltaTime);
+            transform.GetChild(0).localPosition = Vector3.Lerp(initialPosition, finalPosition, glideSpeed * Time.deltaTime);
         }
     }
 
