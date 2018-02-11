@@ -128,6 +128,9 @@ ModelImporter:
     100240: nail_011
     100242: nail_012
     100244: nail_013
+    100246: generator_MeshPart0
+    100248: generator_MeshPart1
+    100250: generator_MeshPart2
     400000: Circle
     400002: Circle_001
     400004: Circle_002
@@ -251,6 +254,9 @@ ModelImporter:
     400240: nail_011
     400242: nail_012
     400244: nail_013
+    400246: generator_MeshPart0
+    400248: generator_MeshPart1
+    400250: generator_MeshPart2
     2300000: Circle
     2300002: Circle_001
     2300004: Circle_002
@@ -372,6 +378,9 @@ ModelImporter:
     2300236: nail_011
     2300238: nail_012
     2300240: nail_013
+    2300242: generator_MeshPart0
+    2300244: generator_MeshPart1
+    2300246: generator_MeshPart2
     3300000: Circle
     3300002: Circle_001
     3300004: Circle_002
@@ -493,6 +502,9 @@ ModelImporter:
     3300236: nail_011
     3300238: nail_012
     3300240: nail_013
+    3300242: generator_MeshPart0
+    3300244: generator_MeshPart1
+    3300246: generator_MeshPart2
     4300000: Cylinder
     4300002: Plane
     4300004: Cube
@@ -614,6 +626,9 @@ ModelImporter:
     4300236: nail_010
     4300238: nail_013
     4300240: nail_012
+    4300242: generator_MeshPart0
+    4300244: generator_MeshPart1
+    4300246: generator_MeshPart2
     7400000: Default Take
     9500000: //RootNode
   materials:

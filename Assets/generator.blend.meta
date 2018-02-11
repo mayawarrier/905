@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: b89ffca33a14fc04d9c67eaf535d01b5
+timeCreated: 1518152302
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: gearLeft
+    100002: gearLeftUp
+    100004: gearRight
+    100006: gearRight2
+    100008: //RootNode
+    100010: generatorWithoutGears
+    100012: generatorWithoutGears_MeshPart0
+    100014: generatorWithoutGears_MeshPart1
+    100016: generatorWithoutGears_MeshPart2
+    100018: hinge
+    100020: hinge_001
+    100022: hinge_002
+    100024: hinge_003
+    100026: nail
+    100028: nail_001
+    100030: nail_002
+    100032: nail_003
+    100034: nail_004
+    100036: nail_005
+    100038: nail_006
+    100040: nail_007
+    100042: nail_008
+    100044: nail_009
+    100046: nail_010
+    100048: nail_011
+    100050: nail_012
+    100052: nail_013
+    100054: Plane
+    400000: gearLeft
+    400002: gearLeftUp
+    400004: gearRight
+    400006: gearRight2
+    400008: //RootNode
+    400010: generatorWithoutGears
+    400012: generatorWithoutGears_MeshPart0
+    400014: generatorWithoutGears_MeshPart1
+    400016: generatorWithoutGears_MeshPart2
+    400018: hinge
+    400020: hinge_001
+    400022: hinge_002
+    400024: hinge_003
+    400026: nail
+    400028: nail_001
+    400030: nail_002
+    400032: nail_003
+    400034: nail_004
+    400036: nail_005
+    400038: nail_006
+    400040: nail_007
+    400042: nail_008
+    400044: nail_009
+    400046: nail_010
+    400048: nail_011
+    400050: nail_012
+    400052: nail_013
+    400054: Plane
+    2300000: gearLeft
+    2300002: gearLeftUp
+    2300004: gearRight
+    2300006: gearRight2
+    2300008: generatorWithoutGears_MeshPart0
+    2300010: generatorWithoutGears_MeshPart1
+    2300012: generatorWithoutGears_MeshPart2
+    2300014: hinge
+    2300016: hinge_001
+    2300018: hinge_002
+    2300020: hinge_003
+    2300022: nail
+    2300024: nail_001
+    2300026: nail_002
+    2300028: nail_003
+    2300030: nail_004
+    2300032: nail_005
+    2300034: nail_006
+    2300036: nail_007
+    2300038: nail_008
+    2300040: nail_009
+    2300042: nail_010
+    2300044: nail_011
+    2300046: nail_012
+    2300048: nail_013
+    2300050: Plane
+    3300000: gearLeft
+    3300002: gearLeftUp
+    3300004: gearRight
+    3300006: gearRight2
+    3300008: generatorWithoutGears_MeshPart0
+    3300010: generatorWithoutGears_MeshPart1
+    3300012: generatorWithoutGears_MeshPart2
+    3300014: hinge
+    3300016: hinge_001
+    3300018: hinge_002
+    3300020: hinge_003
+    3300022: nail
+    3300024: nail_001
+    3300026: nail_002
+    3300028: nail_003
+    3300030: nail_004
+    3300032: nail_005
+    3300034: nail_006
+    3300036: nail_007
+    3300038: nail_008
+    3300040: nail_009
+    3300042: nail_010
+    3300044: nail_011
+    3300046: nail_012
+    3300048: nail_013
+    3300050: Plane
+    4300000: Plane
+    4300002: generatorWithoutGears_MeshPart0
+    4300004: generatorWithoutGears_MeshPart1
+    4300006: generatorWithoutGears_MeshPart2
+    4300008: gearRight
+    4300010: gearLeft
+    4300012: gearLeftUp
+    4300014: gearRight2
+    4300016: hinge
+    4300018: hinge_001
+    4300020: hinge_002
+    4300022: hinge_003
+    4300024: nail
+    4300026: nail_001
+    4300028: nail_002
+    4300030: nail_003
+    4300032: nail_004
+    4300034: nail_005
+    4300036: nail_007
+    4300038: nail_006
+    4300040: nail_009
+    4300042: nail_008
+    4300044: nail_011
+    4300046: nail_010
+    4300048: nail_013
+    4300050: nail_012
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 2db622ddd9fe7b141a73da61e80457d5
+timeCreated: 1518156616
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Camera
+    100002: gearLeft
+    100004: gearLeftUp
+    100006: gearRight
+    100008: gearRight2
+    100010: generatorWithoutGears
+    100012: generatorWithoutGears_MeshPart0
+    100014: generatorWithoutGears_MeshPart1
+    100016: generatorWithoutGears_MeshPart2
+    100018: hinge
+    100020: hinge.001
+    100022: hinge.002
+    100024: hinge.003
+    100026: //RootNode
+    100028: Lamp
+    100030: Lamp.001
+    100032: Lamp.002
+    100034: Lamp.003
+    100036: Lamp.004
+    100038: Lamp.005
+    100040: Lamp.006
+    100042: Lamp.007
+    100044: nail
+    100046: nail.001
+    100048: nail.002
+    100050: nail.003
+    100052: nail.004
+    100054: nail.005
+    100056: nail.006
+    100058: nail.007
+    100060: nail.008
+    100062: nail.009
+    100064: nail.010
+    100066: nail.011
+    100068: nail.012
+    100070: nail.013
+    100072: Plane
+    400000: Camera
+    400002: gearLeft
+    400004: gearLeftUp
+    400006: gearRight
+    400008: gearRight2
+    400010: generatorWithoutGears
+    400012: generatorWithoutGears_MeshPart0
+    400014: generatorWithoutGears_MeshPart1
+    400016: generatorWithoutGears_MeshPart2
+    400018: hinge
+    400020: hinge.001
+    400022: hinge.002
+    400024: hinge.003
+    400026: //RootNode
+    400028: Lamp
+    400030: Lamp.001
+    400032: Lamp.002
+    400034: Lamp.003
+    400036: Lamp.004
+    400038: Lamp.005
+    400040: Lamp.006
+    400042: Lamp.007
+    400044: nail
+    400046: nail.001
+    400048: nail.002
+    400050: nail.003
+    400052: nail.004
+    400054: nail.005
+    400056: nail.006
+    400058: nail.007
+    400060: nail.008
+    400062: nail.009
+    400064: nail.010
+    400066: nail.011
+    400068: nail.012
+    400070: nail.013
+    400072: Plane
+    2000000: Camera
+    2300000: gearLeft
+    2300002: gearLeftUp
+    2300004: gearRight
+    2300006: gearRight2
+    2300008: generatorWithoutGears_MeshPart0
+    2300010: generatorWithoutGears_MeshPart1
+    2300012: generatorWithoutGears_MeshPart2
+    2300014: hinge
+    2300016: hinge.001
+    2300018: hinge.002
+    2300020: hinge.003
+    2300022: nail
+    2300024: nail.001
+    2300026: nail.002
+    2300028: nail.003
+    2300030: nail.004
+    2300032: nail.005
+    2300034: nail.006
+    2300036: nail.007
+    2300038: nail.008
+    2300040: nail.009
+    2300042: nail.010
+    2300044: nail.011
+    2300046: nail.012
+    2300048: nail.013
+    2300050: Plane
+    3300000: gearLeft
+    3300002: gearLeftUp
+    3300004: gearRight
+    3300006: gearRight2
+    3300008: generatorWithoutGears_MeshPart0
+    3300010: generatorWithoutGears_MeshPart1
+    3300012: generatorWithoutGears_MeshPart2
+    3300014: hinge
+    3300016: hinge.001
+    3300018: hinge.002
+    3300020: hinge.003
+    3300022: nail
+    3300024: nail.001
+    3300026: nail.002
+    3300028: nail.003
+    3300030: nail.004
+    3300032: nail.005
+    3300034: nail.006
+    3300036: nail.007
+    3300038: nail.008
+    3300040: nail.009
+    3300042: nail.010
+    3300044: nail.011
+    3300046: nail.012
+    3300048: nail.013
+    3300050: Plane
+    4300000: Plane
+    4300002: generatorWithoutGears_MeshPart0
+    4300004: generatorWithoutGears_MeshPart1
+    4300006: generatorWithoutGears_MeshPart2
+    4300008: gearRight
+    4300010: gearLeft
+    4300012: gearLeftUp
+    4300014: gearRight2
+    4300016: hinge
+    4300018: hinge.001
+    4300020: hinge.002
+    4300022: hinge.003
+    4300024: nail
+    4300026: nail.001
+    4300028: nail.002
+    4300030: nail.003
+    4300032: nail.004
+    4300034: nail.005
+    4300036: nail.007
+    4300038: nail.006
+    4300040: nail.009
+    4300042: nail.008
+    4300044: nail.011
+    4300046: nail.010
+    4300048: nail.013
+    4300050: nail.012
+    10800000: Lamp
+    10800002: Lamp.001
+    10800004: Lamp.002
+    10800006: Lamp.003
+    10800008: Lamp.004
+    10800010: Lamp.005
+    10800012: Lamp.006
+    10800014: Lamp.007
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
