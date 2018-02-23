@@ -12,6 +12,8 @@ ModelImporter:
     100008: normal2
     100010: brokenCeiling
     100012: normalCeiling
+    100014: ceilingVent
+    100016: dirtyCeiling
     400000: broken1
     400002: broken2
     400004: //RootNode
@@ -19,32 +21,80 @@ ModelImporter:
     400008: normal2
     400010: brokenCeiling
     400012: normalCeiling
+    400014: ceilingVent
+    400016: dirtyCeiling
     2300000: broken1
     2300002: broken2
     2300004: normal1
     2300006: normal2
     2300008: brokenCeiling
     2300010: normalCeiling
+    2300012: ceilingVent
+    2300014: dirtyCeiling
     3300000: broken1
     3300002: broken2
     3300004: normal1
     3300006: normal2
     3300008: brokenCeiling
     3300010: normalCeiling
+    3300012: ceilingVent
+    3300014: dirtyCeiling
     4300000: normal1
     4300002: normal2
     4300004: broken1
     4300006: broken2
     4300008: normalCeiling
     4300010: brokenCeiling
+    4300012: dirtyCeiling
+    4300014: ceilingVent
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ceilingTileNormal
+    second: {fileID: 2100000, guid: ebe1ad8ddab0ceb4e971a2478a9bed35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceilingTileRusted
+    second: {fileID: 2100000, guid: 572478b93f996bd4c9a7c7a757e3214c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceilingVent
+    second: {fileID: 2100000, guid: a2986d160f533b2429a17a6d9b8b3057, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: celingTile
+    second: {fileID: 2100000, guid: a9fdd2e8b42eaa542a93bd89af2bb406, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: unnamed
     second: {fileID: 2100000, guid: d3097eec3ca39da468a40db37ac4f533, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic
+    second: {fileID: 2100000, guid: c5d94815769504e4fa598865cf08adbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic2
+    second: {fileID: 2100000, guid: 77f5c313975190f4baecdbe4934b64fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic2_001
+    second: {fileID: 2100000, guid: 8094b6495f2fca944a68fc07ab5483eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic2_002
+    second: {fileID: 2100000, guid: 40e7fe6bc1720cd49b4b04c1af358953, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

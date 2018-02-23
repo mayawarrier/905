@@ -3,7 +3,7 @@ guid: 4fb4a1df45ff5574b9da4904fdf92a6a
 timeCreated: 1509472010
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: BezierCircle
     100002: Cube
@@ -731,6 +731,11 @@ ModelImporter:
     101446: Cylinder_115
     101448: Cylinder_116
     101450: ceiling
+    101452: vent
+    101454: brokenCeiling
+    101456: ceilingVent
+    101458: dirtyCeiling
+    101460: normalCeiling
     400000: BezierCircle
     400002: Cube
     400004: Cube_001
@@ -1457,6 +1462,11 @@ ModelImporter:
     401446: Cylinder_115
     401448: Cylinder_116
     401450: ceiling
+    401452: vent
+    401454: brokenCeiling
+    401456: ceilingVent
+    401458: dirtyCeiling
+    401460: normalCeiling
     2300000: BezierCircle
     2300002: Cube
     2300004: Cube_001
@@ -2182,6 +2192,11 @@ ModelImporter:
     2301444: Cylinder_115
     2301446: Cylinder_116
     2301448: ceiling
+    2301450: vent
+    2301452: brokenCeiling
+    2301454: ceilingVent
+    2301456: dirtyCeiling
+    2301458: normalCeiling
     3300000: BezierCircle
     3300002: Cube
     3300004: Cube_001
@@ -2907,6 +2922,11 @@ ModelImporter:
     3301444: Cylinder_115
     3301446: Cylinder_116
     3301448: ceiling
+    3301450: vent
+    3301452: brokenCeiling
+    3301454: ceilingVent
+    3301456: dirtyCeiling
+    3301458: normalCeiling
     4300000: Plane_016
     4300002: Plane
     4300004: BezierCircle
@@ -3632,12 +3652,84 @@ ModelImporter:
     4301444: Cylinder_116
     4301446: Cylinder_028
     4301448: ceiling
+    4301450: vent
+    4301452: brokenCeiling
+    4301454: ceilingVent
+    4301456: dirtyCeiling
+    4301458: normalCeiling
     7400000: Default Take
     9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceilingTileNormal
+    second: {fileID: 2100000, guid: ebe1ad8ddab0ceb4e971a2478a9bed35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceilingTileRusted
+    second: {fileID: 2100000, guid: 572478b93f996bd4c9a7c7a757e3214c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceilingVent
+    second: {fileID: 2100000, guid: a2986d160f533b2429a17a6d9b8b3057, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: celingTile
+    second: {fileID: 2100000, guid: a9fdd2e8b42eaa542a93bd89af2bb406, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 1119f34e4278155438c30affbf19deb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail
+    second: {fileID: 2100000, guid: 56c27073992bc7540969042fde2522dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nailMetal
+    second: {fileID: 2100000, guid: 92bb5ddcdcd3fd34ab5eb59e0fb137b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rustedMetal
+    second: {fileID: 2100000, guid: 895bc7d8e3e97f24f966b6b4c0ed2d8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: d3097eec3ca39da468a40db37ac4f533, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic
+    second: {fileID: 2100000, guid: c5d94815769504e4fa598865cf08adbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic2
+    second: {fileID: 2100000, guid: 77f5c313975190f4baecdbe4934b64fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic2_001
+    second: {fileID: 2100000, guid: 8094b6495f2fca944a68fc07ab5483eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whitePlastic2_002
+    second: {fileID: 2100000, guid: 40e7fe6bc1720cd49b4b04c1af358953, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -3650,6 +3742,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -3674,6 +3767,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
