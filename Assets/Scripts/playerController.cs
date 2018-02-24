@@ -12,7 +12,6 @@ public class playerController : MonoBehaviour {
     public robotMovement player;
 	public Transform cameraTransform; 
 	Vector3 direction; // direction camera is looking at
-    private Quaternion finalRotation;
     public Transform lookAt;
     public bool isWalking, isRunning, isCrouching;
     private bool complete;
@@ -61,7 +60,7 @@ public class playerController : MonoBehaviour {
 		{
             if (rotationFlags[i])
             {
-                player.goInDirection(rotateDirectionVector(direction, i));
+                player.goInDirection(direction, i);
                 break;
 			}
 		}
@@ -71,31 +70,5 @@ public class playerController : MonoBehaviour {
 		}
 	}
 
-    private Vector3 rotateDirectionVector(Vector3 fwdWrtPlayer, int rotation) {
-
-        finalRotation = new Quaternion(0, 0, fwdWrtPlayer.z, fwdWrtPlayer.x); // initial rotation as a quaternion
-
-        switch (rotation)
-        {
-            case 0:
-                return fwdWrtPlayer;
-            case 1:
-                finalRotation *= new Quaternion(0, 0, -1, 1); break;
-            case 2:
-                finalRotation *= new Quaternion(0, 0, -1, 0); break;
-            case 3:
-                finalRotation *= new Quaternion(0, 0, -1, -1); break;
-            case 4:
-                return -fwdWrtPlayer;
-            case 5:
-                finalRotation *= new Quaternion(0, 0, 1, -1); break;
-            case 6:
-                finalRotation *= new Quaternion(0, 0, 1, 0); break;
-            case 7:
-                finalRotation *= new Quaternion(0, 0, 1, 1); break;
-            default:
-                Debug.Log("Not a valid rotation. Provide an integer from 0-7."); break;
-        }
-        return Vector3.Normalize(new Vector3(finalRotation.w, 0, finalRotation.z));
-    }
+   
 }
