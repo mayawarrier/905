@@ -17,7 +17,6 @@ public class robotMovement: MonoBehaviour
     public void goInDirection(Vector3 direction, int rotation)
     {
         direction = rotateDirectionVector(direction, rotation);
-        direction.y = 0;
         fwdWrtRobot = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, fwdWrtRobot, turnSpeed * Time.deltaTime);
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
@@ -31,7 +30,7 @@ public class robotMovement: MonoBehaviour
         switch (rotation)
         {
             case 0:
-                return fwdWrtRobot;
+                return new Vector3(fwdWrtRobot.x, 0, fwdWrtRobot.z);
             case 1:
                 finalRotation *= new Quaternion(0, 0, -1, 1); break;
             case 2:
@@ -39,7 +38,7 @@ public class robotMovement: MonoBehaviour
             case 3:
                 finalRotation *= new Quaternion(0, 0, -1, -1); break;
             case 4:
-                return -fwdWrtRobot;
+                return new Vector3(-fwdWrtRobot.x, 0, -fwdWrtRobot.z);
             case 5:
                 finalRotation *= new Quaternion(0, 0, 1, -1); break;
             case 6:
