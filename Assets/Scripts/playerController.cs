@@ -15,6 +15,7 @@ public class playerController : MonoBehaviour {
     public Transform lookAt;
     public bool isWalking, isRunning, isCrouching;
     private bool complete;
+    private float someFloat;
 
     private void Start()
     {
