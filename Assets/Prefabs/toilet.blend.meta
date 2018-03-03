@@ -1,35 +1,23 @@
 fileFormatVersion: 2
-guid: fe0486c741ee7dd46936bc7d2667d68e
+guid: fb1b7eadb1a734f4ba8c366a14fb002f
+timeCreated: 1520099914
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: backsidelock
-    100002: Cube
-    100004: Plane
-    100006: Plane_001
-    100008: //RootNode
-    400000: backsidelock
-    400002: Cube
-    400004: Plane
-    400006: Plane_001
-    400008: //RootNode
-    2100000: Material
-    2100002: unnamed
-    2100004: door
-    2100006: rustedMetal__washroomTiles_jpg
-    2100008: rustedMetal
-    2300000: backsidelock
-    2300002: Cube
-    2300004: Plane
-    2300006: Plane_001
-    3300000: backsidelock
-    3300002: Cube
-    3300004: Plane
-    3300006: Plane_001
-    4300000: backsidelock
-    4300002: Plane_001
-    4300004: Plane
-    4300006: Cube
+    100000: flush
+    100002: //RootNode
+    100004: toilet_seat
+    400000: flush
+    400002: //RootNode
+    400004: toilet_seat
+    2100000: porcelain_001
+    2300000: flush
+    2300002: toilet_seat
+    3300000: flush
+    3300002: toilet_seat
+    4300000: flush
+    4300002: toilet_seat
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
