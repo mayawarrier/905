@@ -70,6 +70,4 @@ public class playerController : MonoBehaviour {
 			offsetController.WalkDirectionSet();
 		}
 	}
-
-   
 }
