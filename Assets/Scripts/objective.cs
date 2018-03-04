@@ -10,7 +10,7 @@ public class objective {
     public string hint;
     public float completionLevel;
 
-    List<childObjective> childObjectives = new List<childObjective>();
+    public List<childObjective> childObjectives = new List<childObjective>();
 
     public objective(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives) {
 
