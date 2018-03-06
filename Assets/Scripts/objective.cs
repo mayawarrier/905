@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class objective {
 
@@ -29,10 +30,9 @@ public class objective {
         }
     }
 
-    private void MakeChild(objective child)
+    public void MakeChild(objective child)
     {
         int numberOfGrandChildren = child.childObjectives.Count; // a child objective may have grandchildren
-
         if (numberOfGrandChildren == 0) // if no grandchildren pass null as childObjectives of child
         {
             childObjectives.Add(new childObjective(child.title, child.description, child.completionLevel, child.hint, null));
@@ -40,7 +40,6 @@ public class objective {
         else // else get the list of child's child objectives and pass it as grandChildObjectives
         {
             objective[] grandChildObjectives = new objective[numberOfGrandChildren];
-
             for (int i = 0; i < numberOfGrandChildren; i++)
             {
                 grandChildObjectives[i] = child.GetChild(i);
@@ -51,13 +50,22 @@ public class objective {
         }
     }
 
-    private objective GetChild(int serialNumber)
+    public objective GetChild(int serialNumber)
     {
         return childObjectives[serialNumber].thisChild; // returns type "objective" from every instance of childObjective in the dynamic list 
     }
 
-    public bool IsComplete() {
+    public void PrintContents()
+    {
+        Debug.Log("Serial number: " + serialNumber.ToString());
+        Debug.Log("Title: " + title);
+        Debug.Log("Description: " + description);
+        Debug.Log("Hint: " + hint);
+        Debug.Log("Completion level: " + completionLevel);
+    }
 
+    public bool IsComplete()
+    {
         if (completionLevel == 100)
         {
             return true;
@@ -66,4 +74,29 @@ public class objective {
             return false;
         }
     }
+}
+
+public class childObjective : IComparable<childObjective>
+{ // defines a collection/list
+    public objective thisChild;
+
+    public childObjective(string title, string description, float completionLevel, string hint, objective[] grandChildObjectives)
+    {
+        // creates a child objective of type "objective" inside every instance of the dynamic list "childObjective"
+        thisChild = new objective(title, description, completionLevel, hint, grandChildObjectives);
+    }
+
+    public int CompareTo(childObjective other)
+    {
+        if (other == null)
+        {
+            return 0;
+        }
+
+        return 0;
+    }
+}
+
+public class serialNumberManager {
+
 }

@@ -72,7 +72,6 @@ public class cameraController: MonoBehaviour {
 
     private Vector3 AccurateSlerp(Vector3 initialPosition, Vector3 finalPosition, float increment) {
 
-
         return Vector3.zero;
     }
 }
