@@ -15,6 +15,7 @@ public class objectiveManager : MonoBehaviour {
         parent.PrintContents();
         parent.GetChild(0).PrintContents();
         parent.GetChild(1).PrintContents();
+
 	}
 	
 }
