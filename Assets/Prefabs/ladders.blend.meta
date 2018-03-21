@@ -13,6 +13,8 @@ ModelImporter:
     400004: standingLadder
     2100000: ladderStanding
     2100002: leaningLader
+    2100004: redMetal
+    2100006: leaningLadderMetal
     2300000: leanLadder
     2300002: standingLadder
     3300000: leanLadder

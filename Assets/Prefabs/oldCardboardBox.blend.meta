@@ -3,7 +3,7 @@ guid: 0d2504641aa08ff4498fb1c1b84a189e
 timeCreated: 1516247778
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: arm
     100002: arm_001
@@ -35,6 +35,10 @@ ModelImporter:
     100054: thighPiston_003
     100056: torso
     100058: yellowWires
+    100060: box
+    100062: parts
+    100064: parts_MeshPart0
+    100066: parts_MeshPart1
     400000: arm
     400002: arm_001
     400004: blueWires
@@ -65,6 +69,10 @@ ModelImporter:
     400054: thighPiston_003
     400056: torso
     400058: yellowWires
+    400060: box
+    400062: parts
+    400064: parts_MeshPart0
+    400066: parts_MeshPart1
     2300000: arm
     2300002: arm_001
     2300004: blueWires
@@ -94,6 +102,9 @@ ModelImporter:
     2300052: thighPiston_003
     2300054: torso
     2300056: yellowWires
+    2300058: box
+    2300060: parts_MeshPart0
+    2300062: parts_MeshPart1
     3300000: arm
     3300002: arm_001
     3300004: blueWires
@@ -123,6 +134,9 @@ ModelImporter:
     3300052: thighPiston_003
     3300054: torso
     3300056: yellowWires
+    3300058: box
+    3300060: parts_MeshPart0
+    3300062: parts_MeshPart1
     4300000: Plane_001
     4300002: Plane
     4300004: Cube
@@ -152,12 +166,77 @@ ModelImporter:
     4300052: hingeJoint_003
     4300054: hingeJoint_004
     4300056: hingeJoint_005
+    4300058: box
+    4300060: parts_MeshPart0
+    4300062: parts_MeshPart1
     7400000: Default Take
     9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blue_001
+    second: {fileID: 2100000, guid: ed677fb78c778ce43a2078ae0fad87c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fragile
+    second: {fileID: 2100000, guid: 7e4793ccdf433d447875074258af6433, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 1119f34e4278155438c30affbf19deb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plasticOverlay
+    second: {fileID: 2100000, guid: ff8e3d6df5faf5547bf6b8cb1cc6316a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plasticOverlayBlack
+    second: {fileID: 2100000, guid: a647b98e1a32a7c4ba3c795dd0d35cc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red_000
+    second: {fileID: 2100000, guid: 0e82193fd9eafe1449d851677a27ed56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red_001
+    second: {fileID: 2100000, guid: 10f815c500ac3f648bf15d7ba5f70893, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rottenCardboard
+    second: {fileID: 2100000, guid: 8cd75c8b3ecd4fd408a4a8fe94c31252, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: secondaryPlasticOverlay
+    second: {fileID: 2100000, guid: ce58407039243c24bbea394cf67a3caa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shinyBlack
+    second: {fileID: 2100000, guid: 1132d623b1704db479c78e8f9ddc9141, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tape
+    second: {fileID: 2100000, guid: ccc64db3edf364f4899b7437358c44d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yellow_001
+    second: {fileID: 2100000, guid: 9926775e94bcaad4d947084159232fec, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -170,6 +249,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -194,6 +274,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
