@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class objectiveManager : MonoBehaviour {
 
-	void Start () {
+	void Start ()
+    {
         objective parent = new objective("test", "This is objective 1", 0, null, null);
         objective child = new objective("test2", "This is nested objective 1", 0, null, null);
         objective child2 = new objective("test3", "This is nested objective 2", 0.5f, "fuckoff", null);
@@ -19,6 +20,8 @@ public class objectiveManager : MonoBehaviour {
 
         parent.GetChild(0).MakeChild(grandChild1).PrintContents();
         parent.GetChild(0).MakeChild(grandChild2).PrintContents();
+
+        parent.GetChild(0).GetChild(0).PrintContents();
 
 	}
 	
