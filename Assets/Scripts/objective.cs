@@ -6,24 +6,27 @@ using System;
 public class objective {
 
     public int serialNumber { get; private set; }
-    public int lastSerialNumberOfChild;
+    private int lastIndex;
     public string title;
     public string description;
     public string hint;
     public float completionLevel;
 
-    public List<childObjective> childObjectives = new List<childObjective>();
+    public List<objective> childObjectives = new List<objective>();
 
     // overloads the constructors to take serialNumber as an argument and create a complete serial number so objective.serialNumber can be used to index an objective
     public objective(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives)
     {
         SetUpParameters(titleParam, descriptionParam, completionLevelParam, hintParam, childObjectives);
+        serialNumber = 1;
+        // all main objectives are initialised with a serial number of 1 until pushed to the main tree, after which they are assigned a serial number based on the
+        // order in which they are pushed
     }
 
-    public objective(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives, int serialNumberOfParent, int lastSerialNumberOfChild)
+    public objective(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives, int serialNumberOfParent, int lastIndex)
     {
         SetUpParameters(titleParam, descriptionParam, completionLevelParam, hintParam, childObjectives);
-        serialNumber = 10 * serialNumberOfParent + lastSerialNumberOfChild;
+        serialNumber = 10 * serialNumberOfParent + lastIndex;
     }
 
     private void SetUpParameters(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives)
@@ -31,7 +34,7 @@ public class objective {
         title = titleParam;
         description = descriptionParam;
         completionLevel = completionLevelParam;
-        lastSerialNumberOfChild = 1;
+        lastIndex = 1;
         if (hintParam != null)
         {
             hint = hintParam; // not necessary to define a hint
@@ -45,13 +48,13 @@ public class objective {
             }
         }
     }
-    public void MakeChild(objective child)
+    public objective MakeChild(objective child)
     {
         int numberOfGrandChildren = child.childObjectives.Count; // a child objective may have grandchildren
         if (numberOfGrandChildren == 0) // if no grandchildren pass null as childObjectives of child
         {
-            childObjectives.Add(new childObjective(child.title, child.description, child.completionLevel, child.hint, null));
-            lastSerialNumberOfChild++;
+            childObjectives.Add(new objective(child.title, child.description, child.completionLevel, child.hint, null, serialNumber, lastIndex));
+            lastIndex++;
         }
         else // else get the list of child's child objectives and pass it as grandChildObjectives
         {
@@ -62,20 +65,32 @@ public class objective {
             }
             // grandChildObjectives will now be re-passed as childObjectives of the child in the constructor of "objective", which calls MakeChild again
             // and gets the children of the grandchildren recursively till it hits null
-            childObjectives.Add(new childObjective(child.title, child.description, child.completionLevel, child.hint, grandChildObjectives));
-            lastSerialNumberOfChild++;
+            childObjectives.Add(new objective(child.title, child.description, child.completionLevel, child.hint, grandChildObjectives, serialNumber, lastIndex));
+            lastIndex++;
         }
+        return GetChild(lastIndex - 2); // returns the child created so functions can be chained
     }
 
-    public objective GetChild(int serialNumber)
+    public objective GetChild(int index)
     {
-        return childObjectives[serialNumber].thisChild; // returns type "objective" from every instance of childObjective in the dynamic list 
+        return childObjectives[index]; // returns type "objective" from every instance of childObjective in the dynamic list 
+    }
+
+    public objective GetChildWithSerial(int serialNumber)
+    {
+        string serialNumberString = serialNumber.ToString();
+        objective currentObjectiveGotten = GetChild(serialNumberString[1]);
+
+        for (int i = 2; i < serialNumberString.Length; i++) {
+            currentObjectiveGotten.GetChild(serialNumberString[i]);
+        }
+        return currentObjectiveGotten;
     }
 
     /// <summary>
-    /// Pushes this objective to the main objective list.
+    /// Adds this objective to the main objective list specified.
     /// </summary>
-    public void PushToMainTree() {
+    public void AddToMainTree(mainObjectivesList mainList) {
         // if not a main objective do not push
         // creates the serial numbers for main objectives that don't have parents
     }
@@ -103,29 +118,13 @@ public class objective {
     }
 }
 
-public class childObjective : IComparable<childObjective>
-{ // defines a collection/list
-    public objective thisChild;
-
-    public childObjective(string title, string description, float completionLevel, string hint, objective[] grandChildObjectives)
-    {
-        // creates a child objective of type "objective" inside every instance of the dynamic list "childObjective"
-        thisChild = new objective(title, description, completionLevel, hint, grandChildObjectives);
-    }
-
-    public int CompareTo(childObjective other)
-    {
-        if (other == null)
-        {
-            return 0;
-        }
-
-        return 0;
-    }
-}
-
-public class mainObjectiveTree
-{ 
+public class mainObjectivesList
+{
     // contains a couple of functions to manipulate the objective tree
-    //todo: implement tree search based on serial number  
+    //todo: implement tree search based on serial number
+    List<objective> rootNullTree = new List<objective>();
+
+    public List<objective> GetList() {
+        return rootNullTree;
+    }
 }
