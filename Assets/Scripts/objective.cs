@@ -90,9 +90,9 @@ public class objective {
     /// <summary>
     /// Adds this objective to the main objective list specified.
     /// </summary>
-    public void AddToMainTree(mainObjectivesList mainList) {
+    public void AddToMainList(mainObjectivesList mainList) {
         // if not a main objective do not push
-        // creates the serial numbers for main objectives that don't have parents
+        // creates the serial numbers for main objectives
     }
 
     public void PrintContents()
@@ -128,7 +128,7 @@ public class mainObjectivesList
         return objectiveList;
     }
 
-    public void Add(objective thisObjective) {
+    public void AddTree(objective thisObjective) {
         objectiveList.Add(thisObjective);
     }
 
