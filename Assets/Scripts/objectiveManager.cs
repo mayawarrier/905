@@ -14,7 +14,7 @@ public class objectiveManager : MonoBehaviour {
         objective grandChild1 = new objective("grandChildof11", "this is a grandchild objective", 0, null, null);
         objective grandChild2 = new objective("grandChildof11", "this is a grandchild objective 2", 0, null, null);
         objective grandGrandChild = new objective("child of 112", "dbdbdb", 0, null, null);
-        mainObjectivesList mainList = new mainObjectivesList();
+        mainList = new mainObjectivesList();
 
         parent.MakeChild(child);
         parent.MakeChild(child2);
