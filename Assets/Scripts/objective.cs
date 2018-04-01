@@ -13,6 +13,7 @@ public class objective {
     public float completionLevel;
 
     public List<objective> childObjectives = new List<objective>();
+    private additionalMethods internalLib = new additionalMethods();
 
     // overloads the constructors to take serialNumber as an argument and create a complete serial number so objective.serialNumber can be used to index an objective
     public objective(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives)
@@ -79,10 +80,10 @@ public class objective {
     public objective GetChildWithSerial(int serialNumber)
     {
         string serialNumberString = serialNumber.ToString();
-        objective currentObjectiveGotten = GetChild(serialNumberString[1]);
+        objective currentObjectiveGotten = GetChild(getIndex(serialNumberString, 1));
 
         for (int i = 2; i < serialNumberString.Length; i++) {
-            currentObjectiveGotten.GetChild(serialNumberString[i]);
+            currentObjectiveGotten = currentObjectiveGotten.GetChild(getIndex(serialNumberString, i));
         }
         return currentObjectiveGotten;
     }
@@ -116,6 +117,11 @@ public class objective {
             return false;
         }
     }
+
+    private int getIndex(string serialNumber, int index)
+    {
+        return internalLib.charToInt(serialNumber[index]) - 1; // returns 0-centered index
+    }
 }
 
 public class mainObjectivesList
@@ -123,50 +129,43 @@ public class mainObjectivesList
     // contains a couple of functions to manipulate the objective list
     //todo: implement tree search based on serial number
     private List<objective> objectiveList = new List<objective>();
+    private additionalMethods internalLib = new additionalMethods();
 
-    public List<objective> GetList() {
+    public List<objective> GetList()
+    {
         return objectiveList;
     }
 
-    public void AddTree(objective thisObjective) {
-        objectiveList.Add(thisObjective);
+    public void AddTree(objective mainObjective)
+    {
+        objectiveList.Add(mainObjective);
     }
 
-    public mainObjectivesList Delete(int serialNumber) {
+    public void InsertTree(int index, objective mainObjective)
+    {
+        objectiveList.Insert(index, mainObjective);
+    }
 
-        // not possible to achieve this in Unity's version of C# --> pointers would fix this issue but can't be made to point to classes or any other reference
-        // type. The only possible "clean" implementation is GetChild().GetChild().GetChild().GetChild()..... ad infinitum. But of course this is terrible and
-        // non-general. However, we can go with a really really messy implementation by first finding the parent of the objective that needs to be deleted, 
-        // then deleting the objective using the parent's removeAt() function. Then the grandparent is found, the old parent deleted and the new parent inserted in 
-        // place. This continues with the grandparent's parent and so on until we hit a main objective and the entire tree has been re-built. The re-built tree is 
-        // returned.
+    public void RemoveTree(int index)
+    {
+        objectiveList.RemoveAt(index);
+    }
 
+    public void Delete(int serialNumber)
+    {
         string serialNumberString = serialNumber.ToString();
-
-        for (int i = 0; i < serialNumberString.Length; i++) {
-            objective parentObjective, grandParentObjective;
-            int serialNumberOfParent = int.Parse(serialNumberString.Substring(0, serialNumberString.Length - 1));
-            int serialNumberOfGrandparent = int.Parse(serialNumberString.Substring(0, serialNumberString.Length - 2));
-            int indexOfParent = int.Parse(serialNumberString.Substring(serialNumberString.Length - 2, 1));
-            int indexOfChild = int.Parse(serialNumberString.Substring(serialNumberString.Length - 1, 1));
-            parentObjective = GetObjectiveWithSerial(serialNumberOfParent);
-            parentObjective.childObjectives.RemoveAt(indexOfChild);
-            grandParentObjective = GetObjectiveWithSerial(serialNumberOfGrandparent);
-            grandParentObjective.childObjectives.RemoveAt(indexOfParent);
-            grandParentObjective.childObjectives.Insert(indexOfParent, parentObjective);
-        }
-
-        return new mainObjectivesList(); // returns an empty list for now so that we have no errors in console
-        // ^^^ terrible implementation looks something like this, still needs to be completed and error-checked
+        int serialNumberOfParent = int.Parse(serialNumberString.Substring(0, serialNumberString.Length - 1));
+        int indexOfChild = int.Parse(serialNumberString.Substring(serialNumberString.Length - 1, 1)) - 1;
+        GetObjectiveWithSerial(serialNumberOfParent).childObjectives.RemoveAt(indexOfChild);
     }
 
     public objective GetObjectiveWithSerial(int serialNumber)
     {
         string serialNumberString = serialNumber.ToString();
-        objective objectiveWithSerial = objectiveList[serialNumberString[0]];
+        objective objectiveWithSerial = objectiveList[internalLib.charToInt(serialNumberString[0]) - 1];
 
         if (serialNumberString.Length > 1) {
-            objectiveWithSerial.GetChildWithSerial(serialNumber);
+            objectiveWithSerial = objectiveWithSerial.GetChildWithSerial(serialNumber);
         }
         return objectiveWithSerial;
     }
