@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class additionalMethods {
+public class internalLib {
 
     public int charToInt(char character)
     {

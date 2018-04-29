@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class objective {
+public class objective : internalLib {
 
     public int serialNumber { get; private set; }
     private int lastIndex;
@@ -13,7 +13,6 @@ public class objective {
     public float completionLevel;
 
     public List<objective> childObjectives = new List<objective>();
-    private additionalMethods internalLib = new additionalMethods();
 
     // overloads the constructors to take serialNumber as an argument and create a complete serial number so objective.serialNumber can be used to index an objective
     public objective(string titleParam, string descriptionParam, float completionLevelParam, string hintParam, objective[] childObjectives)
@@ -120,16 +119,15 @@ public class objective {
 
     private int getIndex(string serialNumber, int index)
     {
-        return internalLib.charToInt(serialNumber[index]) - 1; // returns 0-centered index
+        return charToInt(serialNumber[index]) - 1; // returns 0-centered index
     }
 }
 
-public class mainObjectivesList
+public class mainObjectivesList : internalLib
 {
     // contains a couple of functions to manipulate the objective list
     //todo: implement tree search based on serial number
     private List<objective> objectiveList = new List<objective>();
-    private additionalMethods internalLib = new additionalMethods();
 
     public List<objective> GetList()
     {
@@ -162,7 +160,7 @@ public class mainObjectivesList
     public objective GetObjectiveWithSerial(int serialNumber)
     {
         string serialNumberString = serialNumber.ToString();
-        objective objectiveWithSerial = objectiveList[internalLib.charToInt(serialNumberString[0]) - 1];
+        objective objectiveWithSerial = objectiveList[charToInt(serialNumberString[0]) - 1];
 
         if (serialNumberString.Length > 1) {
             objectiveWithSerial = objectiveWithSerial.GetChildWithSerial(serialNumber);
