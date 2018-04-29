@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 67862f498d073db48892af0cc29f3279
+timeCreated: 1522933450
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube_001
+    100004: doorHandleRim
+    100006: //RootNode
+    100008: elevator
+    100010: elevator_door
+    100012: elevatorDoorMetal
+    100014: frontPanel
+    100016: glassRim
+    100018: machinery
+    100020: metalDoorGlassRim
+    100022: shockwavePad
+    100024: switchBoard
+    100026: wiredDoor
+    400000: Cube
+    400002: Cube_001
+    400004: doorHandleRim
+    400006: //RootNode
+    400008: elevator
+    400010: elevator_door
+    400012: elevatorDoorMetal
+    400014: frontPanel
+    400016: glassRim
+    400018: machinery
+    400020: metalDoorGlassRim
+    400022: shockwavePad
+    400024: switchBoard
+    400026: wiredDoor
+    2100000: counterweight
+    2100002: pulleyMetal
+    2100004: unnamed
+    2100006: roofLight
+    2100008: roofPanel
+    2100010: sidePanel
+    2100012: mirror
+    2100014: metalCrissCross
+    2100016: railingMaterial
+    2100018: exitDoor
+    2100020: exitDoorHandle
+    2100022: glassEffect
+    2100024: frontPanel
+    2100026: downLight
+    2100028: upLight
+    2100030: sides
+    2100032: panel
+    2100034: wiredDoorMetal
+    2100036: wood_001
+    2100038: glass_001
+    2100040: handlePanel_001
+    2100042: metal_067
+    2100044: nail_067
+    2100046: metal_066
+    2100048: nail_066
+    2100050: metal_065
+    2100052: nail_065
+    2100054: metal_064
+    2100056: nail_064
+    2100058: metal_063
+    2100060: nail_063
+    2100062: metal_062
+    2100064: nail_062
+    2100066: metal_061
+    2100068: nail_061
+    2100070: metal_060
+    2100072: nail_060
+    2100074: magnetPanel_003
+    2100076: magnetBars_003
+    2100078: magnetPanel_001
+    2100080: magnetBars_002
+    2100082: handles_001
+    2100084: glassRim_001
+    2100086: metalDoor
+    2100088: doorHandle
+    2100090: glass
+    2100092: glassEffect_001
+    2100094: glassRim_000
+    2100096: buttonsAndLabels
+    2100098: metal
+    2100100: nail
+    2100102: buttonPanel
+    2100104: nailSurface
+    2100106: dirtyMetal
+    2100108: insidePanel
+    2100110: insideUpLight
+    2100112: dangerLights
+    2100114: keyHole
+    2100116: Material
+    2100118: Material_013
+    2100120: Material_014
+    2100122: speakerMetal
+    2100124: metalMachinery
+    2100126: metalWires
+    2300000: Cube
+    2300002: Cube_001
+    2300004: doorHandleRim
+    2300006: elevator
+    2300008: elevator_door
+    2300010: elevatorDoorMetal
+    2300012: frontPanel
+    2300014: glassRim
+    2300016: machinery
+    2300018: metalDoorGlassRim
+    2300020: shockwavePad
+    2300022: switchBoard
+    2300024: wiredDoor
+    3300000: Cube
+    3300002: Cube_001
+    3300004: doorHandleRim
+    3300006: elevator
+    3300008: elevator_door
+    3300010: elevatorDoorMetal
+    3300012: frontPanel
+    3300014: glassRim
+    3300016: machinery
+    3300018: metalDoorGlassRim
+    3300020: shockwavePad
+    3300022: switchBoard
+    3300024: wiredDoor
+    4300000: Cube
+    4300002: Cube_001
+    4300004: shockwavePad
+    4300006: elevator
+    4300008: frontPanel
+    4300010: wiredDoor
+    4300012: elevator_door
+    4300014: glassRim
+    4300016: elevatorDoorMetal
+    4300018: metalDoorGlassRim
+    4300020: doorHandleRim
+    4300022: switchBoard
+    4300024: machinery
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
