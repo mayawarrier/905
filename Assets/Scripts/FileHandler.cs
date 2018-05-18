@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +18,9 @@ using System.IO;
 public static class FileHandler {
 
 	/* Need to ensure that data being saved is serializable */
+
+	/* The functions ReadFile and SaveFile can be used to read/write any file format except txt.
+		To read/write txt, use the ReadFromTxt and SaveToTxt functions instead */
 
 	private const string fileExt = ".xml"; // Default File Extention if none specified.
 
@@ -81,6 +84,10 @@ public static class FileHandler {
 			Debug.LogError ("Filepath ' " + filePath + " ' does not exist");
 			return default(T);
 		}
+		if (!filePath.Contains (".xml")) {
+			Debug.LogError ("Invalid File Format");
+			return default(T);
+		}
 		try {
 			XmlSerializer xs = new XmlSerializer (typeof(T));
 			FileStream fs = new FileStream (filePath, FileMode.Open);
@@ -104,6 +111,10 @@ public static class FileHandler {
 		//List<string> temp = data;
 		if (!File.Exists (filePath)) {
 			Debug.LogError ("Filepath ' " + filePath + " ' does not exist");
+			return null;
+		}
+		if (!filePath.Contains (".txt")) {
+			Debug.LogError ("Invalid File Format");
 			return null;
 		}
 		try {
@@ -182,6 +193,10 @@ public static class FileHandler {
 		bool isValid = ValidateDirectory (filePath);
 		if (!isValid)
 			return false;
+		if (!filePath.Contains (".xml")) {
+			Debug.LogError ("Invalid File Format");
+			return false;
+		}
 		try {
 			XmlSerializer xs = new XmlSerializer(typeof(T));
 			FileStream fs = new FileStream(filePath, FileMode.Create);
@@ -204,6 +219,10 @@ public static class FileHandler {
 	/// <param name="data">String list to save into file.</param>
 	public static bool SaveToTxt (string filePath, List<string> data) {
 		filePath = FixFilePath (filePath, ".txt");
+		if (!filePath.Contains (".txt")) {
+			Debug.LogError ("Invalid File Format");
+			return false;
+		}
 		try {
 			StreamWriter sw = new StreamWriter(filePath);
 			for (int i = 0; i < data.Count; i++) {
