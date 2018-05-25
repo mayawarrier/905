@@ -38,8 +38,8 @@ public class objective : internalLib {
     {
         SetUpParameters(titleParam, descriptionParam, completionLevelParam, hintParam, childObjectives);
         SetValidObjective();
-        /* SetValidObjective sets the serial number to 1. All main objectives are initialised with a serial number of 1 until pushed to the main tree, after which 
-         * they are assigned a serial number based on the order in which they are pushed */
+        // SetValidObjective sets the serial number to 1. All main objectives are initialised with a serial number of 1 until pushed to the main tree, after which 
+        // they are assigned a serial number based on the order in which they are pushed
     }
 
     // do not call this method outside this file
