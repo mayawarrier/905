@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ public static class ObjectiveManager {
 		List<string> ids = objDB.objList.Select (obj => obj.id).ToList ();
 		int index = ids.IndexOf (id);
 		if (index < 0) {
-			Debug.LogError ("Objective does not exist in list");
+			Debug.LogError ("Objective with id ' " + id + " ' does not exist in list");
 			return null;
 		}
 		return GetObjective (index);
@@ -67,14 +67,40 @@ public static class ObjectiveManager {
 		return objDB.objList.Select(obj => obj.id).Contains (id);
 	}
 
+	public static void MakeChildrenConnections() {
+		if (objDB.objList.Count <= 0)
+			return;
+		foreach (objective obj in objDB.objList) {
+			AppendToParent (obj);
+		}
+	}
+
+	public static void AppendToParent(objective obj) {
+		if (obj.parentId == null || obj.parentId == "")
+			return;
+		objective parent = GetObjective (obj.parentId);
+		if (parent != null) {
+			if (parent.childIds == null)
+				parent.childIds = new List<string> ();
+			if (!parent.childIds.Contains(obj.id))
+				parent.childIds.Add (obj.id);
+		}
+	}
+
 	/// <summary>
 	/// Adds the objective to the list.
 	/// </summary>
 	/// <returns><c>true</c>, if objective was added, <c>false</c> otherwise.</returns>
 	/// <param name="obj">Objective to add.</param>
-	public static bool AddObjective(objective obj) {
+	/// <param name="avoidRepeats">If true, will not add objective if its already added.</param>
+	public static bool AddObjective(objective obj, bool avoidRepeats = true) {
+		if (avoidRepeats && IsObjectivePresent (obj)) {
+			Debug.Log ("Objective already present");
+			return false;
+		}
 		try {
 			objDB.objList.Add(obj);
+			AppendToParent(obj);
 			return true;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
@@ -87,10 +113,11 @@ public static class ObjectiveManager {
 	/// </summary>
 	/// <returns><c>true</c>, if objective was removed, <c>false</c> otherwise.</returns>
 	/// <param name="id">Objective id.</param>
-	public static bool RemoveObjective(string id) {
+	/// <param name="removeChildren">If true, also remove all child objectives.</param>
+	public static bool RemoveObjective(string id, bool removeChildren = true) {
 		if (IsObjectivePresent (id)) {
 			objective toRemove = GetObjective (id);
-			return RemoveObjective (toRemove);
+			return RemoveObjective (toRemove, removeChildren);
 		} else {
 			Debug.Log ("Objective with ID: " + id + " Not Found");
 			return false;
@@ -99,12 +126,30 @@ public static class ObjectiveManager {
 
 	/// <summary>
 	/// Removes the objective from the list.
+	/// By default also removes any child objectives.
 	/// </summary>
 	/// <returns><c>true</c>, if objective was removed, <c>false</c> otherwise.</returns>
 	/// <param name="obj">Objective.</param>
-	public static bool RemoveObjective(objective obj) {
+	/// <param name="removeChildren">If true, also remove all child objectives.</param> 
+	public static bool RemoveObjective(objective obj, bool removeChildren = true) {
 		if (IsObjectivePresent (obj)) {
 			int index = objDB.objList.IndexOf (obj);
+			if (removeChildren) {
+				List<string> childrenIds = obj.childIds;
+				foreach (string id in childrenIds) {
+					objective child = GetObjective (id);
+					if (child != null)
+						RemoveObjective (child);
+				}
+			}
+			/* Not sure whether to add this part. Leave commented out for now.
+			 * if (obj.parentId != null) {
+				objective parentObj = GetObjective (obj.parentId);
+				if (parentObj != null) {
+					parentObj.childIds.Remove (obj.id);
+				}
+			}
+			*/
 			objDB.objList.RemoveAt (index);
 			return true;
 		} else {
@@ -145,6 +190,7 @@ public static class ObjectiveManager {
 			return false;
 		}
 		objDB = db;
+		MakeChildrenConnections ();
 		return true;
 	}
 
@@ -168,11 +214,14 @@ public static class ObjectiveManager {
 	/// </summary>
 	/// <returns><c>true</c>, if objectives database was appended, <c>false</c> otherwise.</returns>
 	/// <param name="db">Objective database.</param>
-	public static bool AppendObjectivesDatabase(ObjectiveDatabase db) {
+	/// <param name="avoidRepeats">If true, will not add objectives already in the list.</param>
+	public static bool AppendObjectivesDatabase(ObjectiveDatabase db, bool avoidRepeats = true) {
 		try {
 			for (int i = 0; i < db.objList.Count; i++) {
-				objDB.objList.Add (db.objList [i]);
+				if (!avoidRepeats || !objDB.objList.Contains(db.objList [i]))
+					objDB.objList.Add (db.objList [i]);
 			}
+			MakeChildrenConnections();
 			return true;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
@@ -184,7 +233,7 @@ public static class ObjectiveManager {
 /// <summary>
 /// Objectives database that holds a list of objectives.
 /// </summary>
-[Serializable]
+[System.Serializable]
 public class ObjectiveDatabase {
 	public List<objective> objList;
 
