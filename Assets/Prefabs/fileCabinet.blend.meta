@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 75b4ad99f2486df41babf11b8de3e721
+timeCreated: 1527380928
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: cabinet
+    100002: drawer1
+    100004: drawer2
+    100006: drawer3
+    100008: drawer4
+    100010: drawer5
+    100012: drawer6
+    100014: drawer7
+    100016: drawer8
+    100018: drawer9
+    100020: //RootNode
+    100022: folders1
+    100024: folders6
+    100026: folders7
+    100028: Plane
+    100030: Plane_001
+    400000: cabinet
+    400002: drawer1
+    400004: drawer2
+    400006: drawer3
+    400008: drawer4
+    400010: drawer5
+    400012: drawer6
+    400014: drawer7
+    400016: drawer8
+    400018: drawer9
+    400020: //RootNode
+    400022: folders1
+    400024: folders6
+    400026: folders7
+    400028: Plane
+    400030: Plane_001
+    2100000: emission
+    2100002: oldMetal
+    2100004: black
+    2100006: metal
+    2100008: nail
+    2100010: shinyMetal
+    2100012: expenseReportsLabel
+    2100014: darkMetal
+    2100016: oldMetal_001
+    2100018: folder
+    2100020: file2
+    2100022: file1
+    2100024: file3
+    2100026: file4
+    2100028: file5
+    2100030: emission_001
+    2100032: folder_016
+    2100034: file2_016
+    2100036: file1_016
+    2100038: file3_016
+    2100040: file4_016
+    2100042: file5_016
+    2100044: folder_018
+    2100046: file2_018
+    2100048: file1_018
+    2100050: file3_018
+    2100052: file4_018
+    2100054: file5_018
+    2100056: oldMetal_030
+    2100058: black_001
+    2100060: metal_002
+    2100062: nail_002
+    2100064: shinyMetal_030
+    2100066: financialLabel
+    2100068: darkMetal_015
+    2100070: oldMetal_031
+    2100072: black_044
+    2100074: metal_044
+    2100076: nail_044
+    2100078: shinyMetal_045
+    2100080: creditReports
+    2100082: darkMetal_016
+    2100084: oldMetal_034
+    2100086: black_047
+    2100088: metal_047
+    2100090: nail_047
+    2100092: shinyMetal_048
+    2100094: investmentsLabel
+    2100096: darkMetal_019
+    2100098: oldMetal_033
+    2100100: black_046
+    2100102: metal_046
+    2100104: nail_046
+    2100106: shinyMetal_047
+    2100108: billsLabel
+    2100110: darkMetal_018
+    2100112: oldMetal_032
+    2100114: black_045
+    2100116: metal_045
+    2100118: nail_045
+    2100120: shinyMetal_046
+    2100122: manualsLabel
+    2100124: darkMetal_017
+    2100126: oldMetal_037
+    2100128: black_050
+    2100130: metal_050
+    2100132: nail_050
+    2100134: shinyMetal_051
+    2100136: employeeFilesLabel
+    2100138: darkMetal_022
+    2100140: oldMetal_036
+    2100142: black_049
+    2100144: metal_049
+    2100146: nail_049
+    2100148: shinyMetal_050
+    2100150: medicalReportsLabel
+    2100152: darkMetal_021
+    2100154: oldMetal_035
+    2100156: black_048
+    2100158: metal_048
+    2100160: nail_048
+    2100162: shinyMetal_049
+    2100164: miscLabel
+    2100166: darkMetal_020
+    2300000: cabinet
+    2300002: drawer1
+    2300004: drawer2
+    2300006: drawer3
+    2300008: drawer4
+    2300010: drawer5
+    2300012: drawer6
+    2300014: drawer7
+    2300016: drawer8
+    2300018: drawer9
+    2300020: folders1
+    2300022: folders6
+    2300024: folders7
+    2300026: Plane
+    2300028: Plane_001
+    3300000: cabinet
+    3300002: drawer1
+    3300004: drawer2
+    3300006: drawer3
+    3300008: drawer4
+    3300010: drawer5
+    3300012: drawer6
+    3300014: drawer7
+    3300016: drawer8
+    3300018: drawer9
+    3300020: folders1
+    3300022: folders6
+    3300024: folders7
+    3300026: Plane
+    3300028: Plane_001
+    4300000: Plane
+    4300002: drawer1
+    4300004: cabinet
+    4300006: folders1
+    4300008: Plane_001
+    4300010: folders6
+    4300012: folders7
+    4300014: drawer2
+    4300016: drawer3
+    4300018: drawer4
+    4300020: drawer5
+    4300022: drawer6
+    4300024: drawer7
+    4300026: drawer8
+    4300028: drawer9
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
