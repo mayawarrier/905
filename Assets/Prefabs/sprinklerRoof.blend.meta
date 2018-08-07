@@ -6,15 +6,31 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: bottomEmission
+    100004: sprinkler
+    100006: topEmission
     400000: //RootNode
+    400002: bottomEmission
+    400004: sprinkler
+    400006: topEmission
     2100000: iron
     2100002: gold
     2100004: glass
     2100006: copper
     2100008: redLiquid
+    2100010: emission
+    2100012: emission_001
     2300000: //RootNode
+    2300002: bottomEmission
+    2300004: sprinkler
+    2300006: topEmission
     3300000: //RootNode
+    3300002: bottomEmission
+    3300004: sprinkler
+    3300006: topEmission
     4300000: sprinkler
+    4300002: bottomEmission
+    4300004: topEmission
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
