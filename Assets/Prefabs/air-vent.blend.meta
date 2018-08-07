@@ -1,42 +1,16 @@
 fileFormatVersion: 2
-guid: 6f4f9d1eec5d8fa48bdf1c19139c068a
-timeCreated: 1522933457
+guid: 18e9d1ef3c884e84a8274df0796aaac6
+timeCreated: 1531008443
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: bottomEmission
-    100004: ladder
-    100006: topEmission
     400000: //RootNode
-    400002: bottomEmission
-    400004: ladder
-    400006: topEmission
-    2100000: metal
-    2100002: nail
-    2100004: bumpMetal
-    2100006: topStep
-    2100008: stepHolders
-    2100010: blackPlasticLadder
-    2100012: stepMetal
-    2100014: ladderSides
-    2100016: bernerLogo
-    2100018: labelBarcode
-    2100020: labelLoremIpsum
-    2100022: emission
-    2100024: emission_001
+    2100000: white
     2300000: //RootNode
-    2300002: bottomEmission
-    2300004: ladder
-    2300006: topEmission
     3300000: //RootNode
-    3300002: bottomEmission
-    3300004: ladder
-    3300006: topEmission
-    4300000: ladder
-    4300002: bottomEmission
-    4300004: topEmission
+    4300000: airVent
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
