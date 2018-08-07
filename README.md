@@ -4,4 +4,4 @@ condition, the Zeroth Law, and the things that make us human.
 
 Play our small demo here: https://brokentablestudios.com/demo/
 
-## Built with love at Broken Table Studios
+Built with love at Broken Table Studios
