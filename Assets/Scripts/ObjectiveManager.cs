@@ -6,12 +6,12 @@ using UnityEngine;
 
 /// <summary>
 /// Objective manager class manages adding, removing and updating of objectives.
-/// Also manages the saving/loading of ObjectiveDatabase.
+/// Also manages the saving/loading of ObjectiveList.
 /// </summary>
 public static class ObjectiveManager {
 
 	const string defaultSavePath = "[]objectiveManager"; // Default save path if none specified.
-	static ObjectiveDatabase objDB = new ObjectiveDatabase(); // Objective database that holds objective list.
+	static ObjectiveList objList = new ObjectiveList(); // List of current objectives.
 
 	/// <summary>
 	/// Gets the objective at the specified index of objective list.
@@ -19,11 +19,11 @@ public static class ObjectiveManager {
 	/// <returns>The objective if present in the list, null otherwise.</returns>
 	/// <param name="index">Index.</param>
 	public static objective GetObjective(int index) {
-		if (index < 0 || index >= objDB.objList.Count) {
+		if (index < 0 || index >= objList.list.Count) {
 			Debug.LogError ("Invalid Objective Index");
 			return null;
 		}
-		return objDB.objList [index];
+		return objList[index];
 	}
 
 	/// <summary>
@@ -32,7 +32,7 @@ public static class ObjectiveManager {
 	/// <returns>The objective if present in the list, null otherwise.</returns>
 	/// <param name="id">Objective id.</param>
 	public static objective GetObjective(string id) {
-		List<string> ids = objDB.objList.Select (obj => obj.id).ToList ();
+		List<string> ids = objList.list.Select (obj => obj.id).ToList ();
 		int index = ids.IndexOf (id);
 		if (index < 0) {
 			Debug.LogError ("Objective with id ' " + id + " ' does not exist in list");
@@ -46,7 +46,7 @@ public static class ObjectiveManager {
 	/// </summary>
 	/// <returns>The list.</returns>
 	public static List<objective> GetList() {
-		return objDB.objList;
+		return objList.list;
 	}
 
 	/// <summary>
@@ -55,7 +55,7 @@ public static class ObjectiveManager {
 	/// <returns><c>true</c> if is objective present the list, <c>false</c> otherwise.</returns>
 	/// <param name="obj">Objective.</param>
 	public static bool IsObjectivePresent(objective obj) {
-		return objDB.objList.Contains (obj);
+		return objList.list.Contains (obj);
 	}
 
 	/// <summary>
@@ -64,13 +64,13 @@ public static class ObjectiveManager {
 	/// <returns><c>true</c> if is objective is present, <c>false</c> otherwise.</returns>
 	/// <param name="id">Objective id.</param>
 	public static bool IsObjectivePresent(string id) {
-		return objDB.objList.Select(obj => obj.id).Contains (id);
+		return objList.list.Select(obj => obj.id).Contains (id);
 	}
 
 	public static void MakeChildrenConnections() {
-		if (objDB.objList.Count <= 0)
+		if (objList.list.Count <= 0)
 			return;
-		foreach (objective obj in objDB.objList) {
+		foreach (objective obj in objList.list) {
 			AppendToParent (obj);
 		}
 	}
@@ -99,7 +99,7 @@ public static class ObjectiveManager {
 			return false;
 		}
 		try {
-			objDB.objList.Add(obj);
+			objList.list.Add(obj);
 			AppendToParent(obj);
 			return true;
 		} catch (Exception e) {
@@ -133,7 +133,7 @@ public static class ObjectiveManager {
 	/// <param name="removeChildren">If true, also remove all child objectives.</param> 
 	public static bool RemoveObjective(objective obj, bool removeChildren = true) {
 		if (IsObjectivePresent (obj)) {
-			int index = objDB.objList.IndexOf (obj);
+			int index = objList.list.IndexOf (obj);
 			if (removeChildren) {
 				List<string> childrenIds = obj.childIds;
 				foreach (string id in childrenIds) {
@@ -150,7 +150,7 @@ public static class ObjectiveManager {
 				}
 			}
 			*/
-			objDB.objList.RemoveAt (index);
+			objList.list.RemoveAt (index);
 			return true;
 		} else {
 			Debug.Log ("Objective " + obj.title + " Not Found");
@@ -169,7 +169,7 @@ public static class ObjectiveManager {
 	/// <returns><c>true</c>, if objectives state was saved, <c>false</c> otherwise.</returns>
 	/// <param name="filePath">File path to save to.</param>
 	public static bool SaveObjectivesState(string filePath = defaultSavePath) {
-		bool success = FileHandler.SaveFile (filePath, objDB);
+		bool success = FileHandler.SaveFile (filePath, objList);
 		if (!success) {
 			Debug.LogError ("Could Not Save");
 			return false;
@@ -184,14 +184,12 @@ public static class ObjectiveManager {
 	/// <returns><c>true</c>, if objectives state was loaded, <c>false</c> otherwise.</returns>
 	/// <param name="filePath">File path to load from.</param>
 	public static bool LoadObjectivesState(string filePath = defaultSavePath) {
-		ObjectiveDatabase db = FileHandler.ReadFile<ObjectiveDatabase> (filePath);
-		if (db == null) {
+		ObjectiveList lst = FileHandler.ReadFile<ObjectiveList> (filePath);
+		if (lst == null) {
 			Debug.LogError ("Could Not Load File");
 			return false;
 		}
-		objDB = db;
-		MakeChildrenConnections ();
-		return true;
+		return ReplaceObjectivesList (lst);
 	}
 
 	/// <summary>
@@ -201,26 +199,42 @@ public static class ObjectiveManager {
 	/// <returns><c>true</c>, if objectives from file was added, <c>false</c> otherwise.</returns>
 	/// <param name="filePath">File path to load from.</param>
 	public static bool AddObjectivesFromFile(string filePath) {
-		ObjectiveDatabase db = FileHandler.ReadFile<ObjectiveDatabase> (filePath);
-		if (db == null) {
+		ObjectiveList lst = FileHandler.ReadFile<ObjectiveList> (filePath);
+		if (lst == null) {
 			Debug.LogError ("Could Not Load File");
 			return false;
 		}
-		return AppendObjectivesDatabase (db);
+		return AppendObjectivesList (lst);
 	}
 
 	/// <summary>
-	/// Appends new objectives database list to current list.
+	/// Appends new objectives list to current list.
 	/// </summary>
-	/// <returns><c>true</c>, if objectives database was appended, <c>false</c> otherwise.</returns>
-	/// <param name="db">Objective database.</param>
+	/// <returns><c>true</c>, if objectives list was appended, <c>false</c> otherwise.</returns>
+	/// <param name="lst">Objective list.</param>
 	/// <param name="avoidRepeats">If true, will not add objectives already in the list.</param>
-	public static bool AppendObjectivesDatabase(ObjectiveDatabase db, bool avoidRepeats = true) {
+	public static bool AppendObjectivesList(ObjectiveList lst, bool avoidRepeats = true) {
 		try {
-			for (int i = 0; i < db.objList.Count; i++) {
-				if (!avoidRepeats || !objDB.objList.Contains(db.objList [i]))
-					objDB.objList.Add (db.objList [i]);
+			for (int i = 0; i < lst.list.Count; i++) {
+				if (!avoidRepeats || !objList.list.Contains(lst.list [i]))
+					objList.list.Add (lst.list [i]);
 			}
+			MakeChildrenConnections();
+			return true;
+		} catch (Exception e) {
+			Debug.LogError (e.Message);
+			return false;
+		}
+	}
+
+	/// <summary>
+	/// Replaces current objectives list with new list.
+	/// </summary>
+	/// <returns><c>true</c>, if objectives list was replaced, <c>false</c> otherwise.</returns>
+	/// <param name="lst">Objective list.</param>
+	public static bool ReplaceObjectivesList(ObjectiveList lst) {
+		try {
+			objList = lst;
 			MakeChildrenConnections();
 			return true;
 		} catch (Exception e) {
@@ -231,21 +245,31 @@ public static class ObjectiveManager {
 }
 
 /// <summary>
-/// Objectives database that holds a list of objectives.
+/// Objectives list that holds a list of objectives.
 /// </summary>
 [System.Serializable]
-public class ObjectiveDatabase {
-	public List<objective> objList;
+public class ObjectiveList {
+	public List<objective> list;
 
-	public ObjectiveDatabase() {
-		objList = new List<objective>();
+	public ObjectiveList() {
+		list = new List<objective>();
 	}
 
-	public ObjectiveDatabase(List<objective> list = null) {
-		if (list == null) {
-			objList = new List<objective> ();
-		} else {
-			objList = list;
-		}
+	public ObjectiveList(List<objective> list) {
+		this.list = list;
 	}
+
+	public objective this[int i] {
+		get { return list [i]; }
+		set { list [i] = value; }
+	}
+
+	public static implicit operator ObjectiveList (List<objective> lst) {
+		return new ObjectiveList(lst);
+	}
+
+	public static implicit operator List<objective> (ObjectiveList objLst) {
+		return objLst.list;
+	}
+
 }

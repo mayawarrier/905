@@ -22,7 +22,8 @@ public static class FileHandler {
 	/* The functions ReadFile and SaveFile can be used to read/write any file format except txt.
 		To read/write txt, use the ReadFromTxt and SaveToTxt functions instead */
 
-	private const string fileExt = ".xml"; // Default File Extention if none specified.
+	private const string FILE_EXTENSION = ".xml"; // Default File Extention if none specified.
+	private const string DEFAULT_FOLDER = "/_data/"; // Default folder after datapath.
 
 	/// <summary>
 	/// Reads data from file.
@@ -58,15 +59,16 @@ public static class FileHandler {
 			Debug.LogError ("Filepath ' " + filePath + " ' does not exist");
 			return default(T);
 		}
+		FileStream fs = new FileStream(filePath, FileMode.Open);
 		try {
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream fs = new FileStream(filePath, FileMode.Open);
 			T obj = bf.Deserialize(fs) as T;
-			fs.Close();
 			return obj;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
 			return default(T);
+		} finally {
+			fs.Close ();
 		}
 	}
 
@@ -88,16 +90,17 @@ public static class FileHandler {
 			Debug.LogError ("Invalid File Format");
 			return default(T);
 		}
+		FileStream fs = new FileStream (filePath, FileMode.Open);
 		try {
 			XmlSerializer xs = new XmlSerializer (typeof(T));
-			FileStream fs = new FileStream (filePath, FileMode.Open);
 			T obj = xs.Deserialize (fs) as T;
-			fs.Close ();
 			return obj;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
 			//obj = temp;
 			return default(T);
+		} finally {
+			fs.Close ();
 		}
 	}
 
@@ -117,10 +120,9 @@ public static class FileHandler {
 			Debug.LogError ("Invalid File Format");
 			return null;
 		}
+		StreamReader sr = new StreamReader(filePath);
 		try {
-			StreamReader sr = new StreamReader(filePath);
 			string rawContent = sr.ReadToEnd();
-			sr.Dispose();
 
 			char[] splitChars = { '\n', '\r' };
 			string[] lines = rawContent.Split(splitChars);
@@ -130,6 +132,8 @@ public static class FileHandler {
 			Debug.LogError (e.Message);
 			//data = temp;
 			return null;
+		} finally {
+			sr.Dispose ();
 		}
 	}
 
@@ -167,15 +171,16 @@ public static class FileHandler {
 		bool isValid = ValidateDirectory (filePath);
 		if (!isValid)
 			return false;
+		FileStream fs = new FileStream(filePath, FileMode.Create);
 		try {
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream fs = new FileStream(filePath, FileMode.Create);
 			bf.Serialize(fs, obj);
-			fs.Close();
 			return true;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
 			return false;
+		} finally {
+			fs.Close ();
 		}
 	}
 
@@ -197,15 +202,16 @@ public static class FileHandler {
 			Debug.LogError ("Invalid File Format");
 			return false;
 		}
+		FileStream fs = new FileStream(filePath, FileMode.Create);
 		try {
 			XmlSerializer xs = new XmlSerializer(typeof(T));
-			FileStream fs = new FileStream(filePath, FileMode.Create);
 			xs.Serialize(fs, obj);
-			fs.Close ();
 			return true;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
 			return false;
+		} finally {
+			fs.Close ();
 		}
 	}
 
@@ -223,16 +229,17 @@ public static class FileHandler {
 			Debug.LogError ("Invalid File Format");
 			return false;
 		}
+		StreamWriter sw = new StreamWriter(filePath);
 		try {
-			StreamWriter sw = new StreamWriter(filePath);
 			for (int i = 0; i < data.Count; i++) {
 				sw.WriteLine(data[i]);
 			}
-			sw.Close();
 			return true;
 		} catch (Exception e) {
 			Debug.LogError (e.Message);
 			return false;
+		} finally {
+			sw.Close ();
 		}
 	}
 
@@ -242,9 +249,9 @@ public static class FileHandler {
 	/// <returns>The fixed file path.</returns>
 	/// <param name="filePath">File path.</param>
 	/// <param name="ext">File extension to add to end of filepath if filepath does not already contain an extension. Uses default (.xml) if not specified</param>
-	static string FixFilePath(string filePath, string ext = fileExt) {
-		string savePath = Application.dataPath + "/_data/";
-		string savePath2 = Application.persistentDataPath + "/_data/";
+	static string FixFilePath(string filePath, string folder = DEFAULT_FOLDER, string ext = FILE_EXTENSION) {
+		string savePath = Application.dataPath + folder;
+		string savePath2 = Application.persistentDataPath + folder;
 		filePath = filePath.Replace ("[]", savePath);
 		filePath = filePath.Replace ("[^]", savePath2);
 		if (!filePath.Contains ("."))
@@ -300,9 +307,9 @@ public static class FileHandler {
 	/// </summary>
 	/// <returns><c>true</c>, if directory exists, <c>false</c> otherwise.</returns>
 	/// <param name="path">Directory Path.</param>
-	public static bool DirectoryExists(string path) {
-		string savePath = Application.dataPath + "/_data/";
-		string savePath2 = Application.persistentDataPath + "/_data/";
+	public static bool DirectoryExists(string path, string folder = DEFAULT_FOLDER) {
+		string savePath = Application.dataPath + folder;
+		string savePath2 = Application.persistentDataPath + folder;
 		path = path.Replace("[]", savePath);
 		path = path.Replace ("[^]", savePath2);
 		string dPath = path;
@@ -346,9 +353,9 @@ public static class FileHandler {
 	/// </summary>
 	/// <returns><c>true</c>, if directory was created or exists, <c>false</c> otherwise.</returns>
 	/// <param name="path">Directory path to create.</param>
-	public static bool CreateDirectory(string path) {
-		string savePath = Application.dataPath + "/_data/";
-		string savePath2 = Application.persistentDataPath + "/_data/";
+	public static bool CreateDirectory(string path, string folder = DEFAULT_FOLDER) {
+		string savePath = Application.dataPath + folder;
+		string savePath2 = Application.persistentDataPath + folder;
 		path = path.Replace("[]", savePath);
 		path = path.Replace ("[^]", savePath2);
 		string dPath = path;
