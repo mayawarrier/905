@@ -6,7 +6,7 @@ using System;
 public class internalLib {
 
     public static bool NOT_FOUND = false;
-    public static objective OBJECTIVE_NOT_FOUND = new objective(NOT_FOUND);
+    // public static objective OBJECTIVE_NOT_FOUND = new objective(NOT_FOUND);
     public Type[] allowedObjectiveAttrTypes = { typeof(string), typeof(float) };
 
     public int charToInt(char character)

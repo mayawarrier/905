@@ -51,11 +51,16 @@ public class StorageContainer {
 		objList = ObjectiveManager.GetList ();
 	}
 
-	/// <summary>
-	/// Load data from this instance of StorageContainer.
-	/// <returns><c>true</c> if load was successful, <c>false</c> otherwise.
-	/// </summary>
-	public bool Load() {
+    /*
+     * Async does not work in this version of C#. Commented out the code below to test in-editor and build.
+     * /
+
+    /*
+    /// <summary>
+    /// Load data from this instance of StorageContainer.
+    /// <returns><c>true</c> if load was successful, <c>false</c> otherwise.
+    /// </summary>
+    public bool Load() {
 		try {
 			LoadDataAsync();
 			return true;
@@ -65,6 +70,7 @@ public class StorageContainer {
 		}
 	}
 
+    
 	/// <summary>
 	/// Loads the data async.
 	/// </summary>
@@ -88,5 +94,7 @@ public class StorageContainer {
 
 		ObjectiveManager.ReplaceObjectivesList (objList);
 	}
+
+    */
 
 }
